@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>CSCE 315 PROJECT 2</title>
+        <meta name="description" content="An interactive getting started guide for Brackets.">
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <h1>CSCE 315 PROJECT 2</h1>
+        <h2>Aggie Scheduler Fetcher</h2>    
+        
+        <!--
+            MADE WITH <3 AND JAVASCRIPT
+        -->
+        
+  <script>
+  // 1. Create the button
+  var button = document.createElement("button");
+  button.innerHTML = "Check Current Schedule";
+
+  // 2. Append somewhere
+  var body = document.getElementsByTagName("body")[0];
+  body.appendChild(button);
+
+  // 3. Add event handler
+  button.addEventListener ("click", function() {
+  window.open("https://compass-ssb.tamu.edu/pls/PROD/BWXKTSCHD.p_textScheduleStudent","_blank");
+  });</script>
+  
+  <script>            
+  var button1 = document.createElement("button");
+  button1.innerHTML = "Log In";    
+    
+
+  // 2. Append somewhere
+  var body1 = document.getElementsByTagName("body")[0];
+  body1.appendChild(button1);
+
+  // 3. Add event handler
+  button1.addEventListener ("click", function() {
+  window.open("https://cas.tamu.edu/cas/login?service=https://howdy.tamu.edu/uPortal/Login&renew=true","_blank");
+     
+});</script>
+        
+  
+<script>
+var kids = ['Class', 'Days', 'Time', 'Professor', 'Syllabus', 'Location'];
+var body = document.body, tbl = document.createElement('table');
+    tbl.style.width = '500px';
+    tbl.style.border = '1px solid black';
+    var tr = tbl.insertRow();
+    for(var i = 0;i < kids.length ; i++){
+    var td = tr.insertCell();
+    td.style.border = '1px solid black';
+    td.appendChild(document.createTextNode(kids[i]))
+    }
+    
+    for(var j = 0; j < 6 ; j++){
+        var tr = tbl.insertRow();
+        for(var i = 0; i < kids.length; i++){
+                var td = tr.insertCell();
+    td.style.border = '1px solid black';
+    td.appendChild(document.createTextNode(' # '))
+        }
+    }
+body.appendChild(tbl);
+    
+    
+</script>   
+
+        <!--
+            THE RELATIONSHIP BETWEEN HTML, CSS AND JAVASCRIPT
+        -->
+        <h3>This button will prompt the studennt to fetch it's calendar and push it into his google calendar..</h3>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis mattis ipsum, iaculis tempor mauris. Cras vel velit dapibus, eleifend ante nec, consectetur tellus. Donec enim diam, tempor eu tortor venenatis, mattis gravida ligula. Pellentesque eu arcu ultricies elit bibendum bibendum. Sed condimentum tortor non lacus luctus mattis. Etiam lobortis bibendum ante a finibus. Integer at lorem ultrices, ultrices ante at, posuere ex. Ut posuere non lacus ac semper. Curabitur cursus gravida convallis. Praesent ut rhoncus velit, quis consectetur nisl.
+        </p>
+        
+  <script>            
+  var button1 = document.createElement("button");
+  button1.innerHTML = "Fetch Google Calendar";    
+    
+
+  // 2. Append somewhere
+  var body1 = document.getElementsByTagName("body")[0];
+  body1.appendChild(button1);
+
+  // 3. Add event handler
+  button1.addEventListener ("click", function() {
+  window.open("https://accounts.google.com/signin/v2/identifier?service=cl&passive=1209600&osid=1&continue=https%3A%2F%2Fcalendar.google.com%2Fcalendar%2Frender&followup=https%3A%2F%2Fcalendar.google.com%2Fcalendar%2Frender&scc=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin","_parent");
+     
+});</script>
+        
+        
+        
+        
+        
+        
+        
+        
+        <!DOCTYPE html>
+<html>
+<head>
+<style>
+body {font-family: Arial;}
+
+/* Style the tab */
+div.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+/* Style the close button */
+.topright {
+    float: right;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.topright:hover {color: red;}
+</style>
+</head>
+<body>
+
+<p>Click on the x button in the top right corner to close the current tab:</p>
+
+<div class="tab">
+  <button class="tablinks" onclick="openTab(event, 'Calendar')" id="defaultOpen">Calendar</button>
+  <button class="tablinks" onclick="openTab(event, 'Drive')">Maps</button>
+  <button class="tablinks" onclick="openTab(event, 'Maps')">Drive</button>
+</div>
+
+<div id="Calendar" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">x</span>
+  <h3>Google Calendar</h3>
+  <p>Some information regarding how to use Google Calendar.</p>
+</div>
+
+<div id="Drive" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">x</span>
+  <h3>Google Drive</h3>
+  <p>Some information regarding how to use Google Drive.</p> 
+</div>
+
+<div id="Maps" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">x</span>
+  <h3>Google Maps</h3>
+  <p>Some information regarding how to use Google Maps.</p>
+</div>
+
+<script>
+function openTab(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+     
+</body>
+</html> 
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <h3> There should be small window with some images regarding app here.</h3>
+
+        
+        <a href="https://engineering.tamu.edu/media/2414221/my_schedule_view_700x399.jpg">
+            <img alt="A screenshot showing CSS Quick Edit" src="https://engineering.tamu.edu/media/2414221/my_schedule_view_700x399.jpg" />
+        </a>
+        
+       
+        <!--
+            LET US KNOW WHAT YOU THINK
+        -->
+        <h2>URL In Use</h2>
+        <p>
+            These are a list of URL's that may be used in the project. URL's or URL's of API's that we may use in the project. This list will not be shown.
+        </p>
+        <ul>
+            <li><a href="http://drive.google.com">Google Drive</a></li>
+            <li><a href="https://calendar.google.com/calendar/render?pli=1#main_7">Google Calendar</a></li>
+            <li><a href="https://maps.google.com">Google Maps</a></li>
+            <li><a href="https://howdy.tamu.edu">Howdy</a></li>
+
+        </ul>
+                <a href="https://brandguide.tamu.edu/images/logos/tam-stack.png">
+            <img alt="School Logo" src="https://brandguide.tamu.edu/images/logos/tam-stack.png" />
+        </a>
+    </body>
+</html>
+<!--
+
+    [[[[[[[[[[[[[[[      ]]]]]]]]]]]]]]]
+    [::::::::::::::      ::::::::::::::]
+    [::::::::::::::      ::::::::::::::]
+    [::::::[[[[[[[:      :]]]]]]]::::::]
+    [:::::[                      ]:::::]
+    [:::::[                      ]:::::]
+    [:::::[                      ]:::::]
+    [:::::[                      ]:::::]
+    [:::::[     CODE THE WEB     ]:::::]
+    [:::::[  http://brackets.io  ]:::::]
+    [:::::[                      ]:::::]
+    [:::::[                      ]:::::]
+    [:::::[                      ]:::::]
+    [:::::[                      ]:::::]
+    [::::::[[[[[[[:      :]]]]]]]::::::]
+    [::::::::::::::      ::::::::::::::]
+    [::::::::::::::      ::::::::::::::]
+    [[[[[[[[[[[[[[[      ]]]]]]]]]]]]]]]
+
+-->
+
+
