@@ -75,8 +75,22 @@ var body = document.body, tbl = document.createElement('table');
 body.appendChild(tbl);
     
     
-</script>   
+</script> 
 
+        
+        
+        <div id="map" style="width:400px;height:400px"></div>
+        <script>
+            function myMap() {
+                var mapOptions = {
+                    center: new google.maps.LatLng(51.5, -0.12),
+                    zoom: 10,
+                    mapTypeId: google.maps.MapTypeId.HYBRID
+                }
+                var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+            }
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key= AIzaSyDL0m7ZMk90GvBE6W6KGrlm5kA63BHna_E &callback=myMap"></script>
         <!--
             THE RELATIONSHIP BETWEEN HTML, CSS AND JAVASCRIPT
         -->
