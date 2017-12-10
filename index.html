@@ -60,6 +60,10 @@ li.dropdown {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+    
+nav{
+ 
+    }
 </style>
 <!-- Style for Drop down menu ending-->
 
@@ -76,14 +80,14 @@ li.dropdown {
     </div>
   </li>
     
-    
+
 <nav id="nav-util" class="can-stick has-categories" >
   <ul class="content">
        <li class="nav-util-search">
 <form id="search" class="fm-search" method="get" action="https://aggieeasyinterface.github.io">
   <fieldset>
     <p>
-      <label for="s">Search this site</label>
+      <!--<label color="white" for="s">Search this site </label> -->
       <input type="search" value="" name="s" id="s">
       <button type="submit" class="button button-minor">Search</button>
     </p>
@@ -109,9 +113,14 @@ img {
 }
 </style>
 <!-- End of style for centering images -->
-        
-        
-        
+
+
+ <picture>
+<source media="(min-width: 650px)" srcset="office-desk-banner_mod.png">
+<source media="(min-width: 465px)" srcset="office-desk-banner_mod.png">
+<img src="office-desk-banner_mod.png" alt="Flowers" style="width:auto;" style="height:auto">
+</picture> 
+
 
       
 <!-- Redirection to TAMU Schedule Page -->
@@ -150,11 +159,13 @@ img {
     
 
 <!-- Demo Tables -->
+<table align="center">
 <script>
 var kids = ['Class', 'Days', 'Time', 'Professor', 'Syllabus', 'Location'];
 var body = document.body, tbl = document.createElement('table');
     tbl.style.width = '500px';
     tbl.style.border = '1px solid black';
+    tbl.tyle.align = 'center';
     var tr = tbl.insertRow();
     for(var i = 0;i < kids.length ; i++){
     var td = tr.insertCell();
@@ -172,6 +183,7 @@ var body = document.body, tbl = document.createElement('table');
     }
 body.appendChild(tbl);
 </script>   
+</table>
 <!-- End of demo tables -->          
 
 <!-- Google Map API Call-->
