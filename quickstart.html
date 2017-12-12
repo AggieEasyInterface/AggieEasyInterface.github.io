@@ -118,10 +118,12 @@
             for (i = 0; i < events.length; i++) {
               var event = events[i];
               var when = event.start.dateTime;
+              var whenEnd = event.end.dateTime;
               if (!when) {
                 when = event.start.date;
+                whenEnd = event.end.date;
               }
-              appendPre(event.summary + ' (' + when + ')')
+              appendPre(event.summary + ' (' + when + ')' + ' (' + whenEnd + ')' )
             }
           } else {
             appendPre('No upcoming events found.');
@@ -135,5 +137,120 @@
       onload="this.onload=function(){};handleClientLoad()"
       onreadystatechange="if (this.readyState === 'complete') this.onload()">
     </script>
-  </body>
+
+      
+      
+<h3>Add a class.</h3>
+<input type="text" id="clss" value="Class">
+<input type="text" id="location" value="Location">
+<input type="text" id="room" value="Room">
+<input type="text" id="times" value="Times">
+<p>After filling out the forms, click "Add Class".</p>
+<button onclick="addClass()">Add Class</button>
+      
+      
+      <!--- For reference -->
+        <p id="demo"></p>
+        <p id="demo1"></p>
+        <p id="demo2"></p>
+        <p id="demo3"></p>
+
+<!-- Insert Event --->
+<script>
+// Refer to the JavaScript quickstart on how to setup the environment:
+// https://developers.google.com/google-apps/calendar/quickstart/js
+// Change the scope to 'https://www.googleapis.com/auth/calendar' and delete any
+// stored credentials.
+    
+function addClass() {
+    var Class = document.getElementById("clss").value;
+    var Location = document.getElementById("location").value;
+    var Room = document.getElementById("room").value;
+    var times = document.getElementById("times").value;
+    times = times.trim();
+    //For testing purposes.
+    document.getElementById("demo").innerHTML = times;
+    document.getElementById("demo1").innerHTML = Class;
+    document.getElementById("demo2").innerHTML = Location;
+    document.getElementById("demo3").innerHTML = Room;
+     var timeStartEnd = new StartTime(times);
+     var endTimes = new endTime(times);
+    insertParsed(Class, Location, Room, timeStartEnd[0], timeStartEnd[1], endTimes[0], endTimes[1]);
+     
+}
+    
+
+function startTime(timeStartDate){
+    var start = new Date((timeStartDate.split(" ")[0]).replace(new RegExp('-', 'g')," ")).toISOString();
+    start = this.start.split("T")[0] + "T";
+    var end = start;
+    var time = timeStartDate.split(" ")[3].split(":");
+    if(x.split(" ")[4] == "PM"){
+           
+            time[0] = (parseInt(time[0]) + 12).toString();
+            start = this.start + time[0] +":" +time[1]+":00";
+    }
+    else{
+            start = this.start + timeStartDate.split(" ")[3];
+    }
+    
+    time = timeStartDate.split(" ")[6].split(":");
+    
+    if(x.split(" ")[7] == "PM"){
+           
+            time[0] = (parseInt(time[0]) + 12).toString();
+            end = this.start + time[0] +":" +time[1];
+    }
+    else{
+            end = this.start + timeStartDate.split(" ")[6];
+    }
+    
+    this.times = [];
+    this.times.push(start);
+    this.times.push(end);
+}
+
+function endTime(timeEndDate){
+    var end = (new Date((timeEndDate.split(" ")[2]).replace(new RegExp('-', 'g')," ")).toISOString());
+    end = end.split("T")[0];
+    end = end.replace(new RegExp('-', 'g'),"") + "T000000Z";
+    this.endT = [];
+    this.endT.push(end);
+    this.endT.push(timeEndDate.split(" ")[8]);
+    
+}
+    
+function insertParsed(Class, Location, Room, StartTime, FinishTime, Until, Reccurence){
+var event = {
+  'summary': Class,
+  'location': Location,
+  'description': Room,
+  'start': {
+   'dateTime': StartTime,
+      //  'dateTime': '2015-05-28T09:00:00',
+    'timeZone': 'America/Dallas'
+  },
+  'end': {
+    'dateTime': FinishTime,
+      //'dateTime': '2015-05-28T17:00:00-07:00', No need for time offset
+    'timeZone': 'America/Dallas'
+  },
+  'recurrence': [
+    //'RRULE:FREQ=WEEKLY;UNTIL=19971007T000000Z;WKST=SU;BYDAY=TU,MON,TH'
+      'RRULE:FREQ=WEEKLY;UNTIL=' +Until+ ';WKST=SU;BYDAY=' +Recurrence 
+  ],
+};
+
+var request = gapi.client.calendar.events.insert({
+  'calendarId': 'primary',
+  'resource': event
+});
+
+request.execute(function(event) {
+  appendPre('Event created: ' + event.htmlLink);
+});
+}
+</script>
+    
+        </body>
 </html>
