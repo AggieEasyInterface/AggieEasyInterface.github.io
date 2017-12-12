@@ -154,7 +154,7 @@
     
 function addClass() {
     var Class = document.getElementById("clss").value;
-    var Location = document.getElementById("location").value;
+    var Locationn = document.getElementById("location").value;
     var Room = document.getElementById("room").value;
     var times = document.getElementById("times").value;
     times = times.trim();
@@ -166,7 +166,7 @@ function addClass() {
     document.getElementById("demo3").innerHTML = Room;*/
      var timeStartEnd = new startTime(times);
      var endTimes = new endTime(times);
-    insertParsed(Class, Location, Room, timeStartEnd.times[0], timeStartEnd.times[1], endTimes.endT[0], endTimes.endT[1]);
+    insertParsed(Class, Locationn, Room, timeStartEnd.times[0], timeStartEnd.times[1], endTimes.endT[0], endTimes.endT[1]);
   //For Testing Purposes.
     /* document.getElementById("demo").innerHTML = timeStartEnd.times[0];
     document.getElementById("demo1").innerHTML = timeStartEnd.times[1];
@@ -218,7 +218,7 @@ function endTime(timeEndDate){
 
 }
     
-function insertParsed(Class, Location, Room, StartTime, FinishTime, Until, Reccurence){
+function insertParsed(Class, Locationn, Room, StartTime, FinishTime, Until, Reccurence){
 
 var event = {
   'summary': 'Google I/O 2015',
@@ -248,7 +248,7 @@ var event = {
   }
 };
     event.summary = Class;
-    event.location = Location;
+    event.location = Locationn;
     event.description= Room;
     event.start.dateTime = StartTime + ":00-06:00";
     event.end.dateTime = FinishTime + ":00-06:00";
