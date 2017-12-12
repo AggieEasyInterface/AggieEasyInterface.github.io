@@ -12,6 +12,20 @@
     <button id="signout-button" style="display: none;">Sign Out</button>
 
     <pre id="content"></pre>
+     <h3>Add a class.</h3>
+<input type="text" id="clss" value="Class">
+<input type="text" id="location" value="Location">
+<input type="text" id="room" value="Room">
+<input type="text" id="times" value="Times">
+<p>After filling out the forms, click "Add Class".</p>
+<button onclick="addClass()">Add Class</button>
+      
+      
+      <!--- For reference -->
+        <p id="demo"></p>
+        <p id="demo1"></p>
+        <p id="demo2"></p>
+        <p id="demo3"></p>
 
     <script type="text/javascript">
       // Client ID and API key from the Developer Console
@@ -131,32 +145,9 @@
         });
       }
 
-    </script>
-
-    <script async defer src="https://apis.google.com/js/api.js"
-      onload="this.onload=function(){};handleClientLoad()"
-      onreadystatechange="if (this.readyState === 'complete') this.onload()">
-    </script>
-
-      
-<h3>Add a class.</h3>
-<input type="text" id="clss" value="Class">
-<input type="text" id="location" value="Location">
-<input type="text" id="room" value="Room">
-<input type="text" id="times" value="Times">
-<p>After filling out the forms, click "Add Class".</p>
-<button onclick="addClass()">Add Class</button>
-      
-      
-      <!--- For reference -->
-        <p id="demo"></p>
-        <p id="demo1"></p>
-        <p id="demo2"></p>
-        <p id="demo3"></p>
-
-<!-- Insert Event --->
-<script>
-// Refer to the JavaScript quickstart on how to setup the environment:
+        
+        
+        // Refer to the JavaScript quickstart on how to setup the environment:
 // https://developers.google.com/google-apps/calendar/quickstart/js
 // Change the scope to 'https://www.googleapis.com/auth/calendar' and delete any
 // stored credentials.
@@ -256,7 +247,15 @@ request.execute(function(event) {
   appendPre('Event created: ' + event.htmlLink);
 });
 }
-</script>
-    
+    </script>
+
+    <script async defer src="https://apis.google.com/js/api.js"
+      onload="this.onload=function(){};handleClientLoad()"
+      onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
+
+      
+
+
         </body>
 </html>
