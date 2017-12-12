@@ -250,8 +250,8 @@ var event = {
     event.summary = Class;
     event.location = Location;
     event.description= Room;
-    event.start.dateTime = StartTime;
-    event.end.dateTime = FinishTime;
+    event.start.dateTime = StartTime + ":00-06:00";
+    event.end.dateTime = FinishTime + ":00-06:00";
     event.recurrence[0] = 'RRULE:FREQ=WEEKLY;UNTIL=' +Until+ ';WKST=SU;BYDAY=' +Reccurence;
     
     //For testing purposes.
