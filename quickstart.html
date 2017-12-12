@@ -267,7 +267,7 @@ var request = gapi.client.calendar.events.insert({
 });
 
 request.execute(function(event) {
-  appendPre('Event created: ' + event.htmlLink);
+  appendPre('Event created: ' + event.summary);
 });
 }
     </script>
