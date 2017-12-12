@@ -159,14 +159,19 @@ function addClass() {
     var times = document.getElementById("times").value;
     times = times.trim();
     //For testing purposes.
-  	
+  	/*
+    document.getElementById("demo").innerHTML = times;
+    document.getElementById("demo1").innerHTML = Class;
+    document.getElementById("demo2").innerHTML = Location;
+    document.getElementById("demo3").innerHTML = Room;*/
      var timeStartEnd = new startTime(times);
      var endTimes = new endTime(times);
     insertParsed(Class, Location, Room, timeStartEnd.times[0], timeStartEnd.times[1], endTimes.endT[0], endTimes.endT[1]);
-    document.getElementById("demo").innerHTML = timeStartEnd.times[0];
+  //For Testing Purposes.
+    /* document.getElementById("demo").innerHTML = timeStartEnd.times[0];
     document.getElementById("demo1").innerHTML = timeStartEnd.times[1];
     document.getElementById("demo2").innerHTML = endTimes.endT[0];
-    document.getElementById("demo3").innerHTML = endTimes.endT[1];
+    document.getElementById("demo3").innerHTML = endTimes.endT[1];*/
  }
     
 
@@ -214,26 +219,48 @@ function endTime(timeEndDate){
 }
     
 function insertParsed(Class, Location, Room, StartTime, FinishTime, Until, Reccurence){
+
 var event = {
-  'summary': Class,
-  'location': Location,
-  'description': Room,
+  'summary': 'Google I/O 2015',
+  'location': '800 Howard St., San Francisco, CA 94103',
+  'description': 'A chance to hear more about Google\'s developer products.',
   'start': {
-   'dateTime': StartTime,
-      //  'dateTime': '2015-05-28T09:00:00',
+    'dateTime': '2015-05-28T09:00:00-07:00',
     'timeZone': 'America/Dallas'
   },
   'end': {
-    'dateTime': FinishTime,
-      //'dateTime': '2015-05-28T17:00:00-07:00', No need for time offset
+    'dateTime': '2015-05-28T17:00:00-07:00',
     'timeZone': 'America/Dallas'
   },
   'recurrence': [
-    //'RRULE:FREQ=WEEKLY;UNTIL=19971007T000000Z;WKST=SU;BYDAY=TU,MON,TH'
-      'RRULE:FREQ=WEEKLY;UNTIL=' +Until+ ';WKST=SU;BYDAY=' +Recurrence 
+    'RRULE:FREQ=DAILY;COUNT=2'
   ],
+  'attendees': [
+    /*{'email': 'lpage@example.com'},
+    {'email': 'sbrin@example.com'}*/
+  ],
+  'reminders': {
+    'useDefault': false,
+    'overrides': [
+      /*{'method': 'email', 'minutes': 24 * 60},
+      {'method': 'popup', 'minutes': 10}*/
+    ]
+  }
 };
-
+    event.summary = Class;
+    event.location = Location;
+    event.description= Room;
+    event.start.dateTime = StartTime;
+    event.end.dateTime = FinishTime;
+    event.recurrence[0] = 'RRULE:FREQ=WEEKLY;UNTIL=' +Until+ ';WKST=SU;BYDAY=' +Reccurence;
+    
+    //For testing purposes.
+    /*
+    document.getElementById("demo").innerHTML = event.start.timeZone;
+    document.getElementById("demo1").innerHTML = event.recurrence[0];
+    document.getElementById("demo2").innerHTML = event.end.dateTime;
+    document.getElementById("demo3").innerHTML = event.start.dateTime;*/
+    
 var request = gapi.client.calendar.events.insert({
   'calendarId': 'primary',
   'resource': event
