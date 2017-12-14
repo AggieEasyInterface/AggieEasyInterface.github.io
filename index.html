@@ -2,11 +2,18 @@
 <html>
     
     <head>
+        <!-- Bootstrap core CSS -->
+         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      
+       <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+      
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>CSCE 315 PROJECT 3</title>
+        <title>Aggie Easy Interface</title>
       
-        <link rel="stylesheet" href="main.css">
+    <link href="css/business-casual.css" rel="stylesheet">
     </head>
 <!-- Style for Unordered List && List Element && DropDown Item-->
 <style>
@@ -64,13 +71,17 @@ li.dropdown {
 .whitetext {
     color: white;
 }
+
+.site-heading {
+  text-transform: uppercase;
+}
 </style>
 <!-- Style for Drop down menu ending-->
 
 <!-- Drop down menu -->
 <ul>
   <li><a href="index.html">Home</a></li>
-  <li><a href="developers.html">Developers</a></li>
+  <li><a href="developers.html" >Developers</a></li>
   <li><a href="quickstart.html" target="_blank">QuickStart</a></li>
   <li class="dropdown">
     <a href="javascript:void(0)" class="dropbtn">Go To</a>
@@ -88,7 +99,6 @@ li.dropdown {
 <form id="search" class="fm-search" method="get" action="https://aggieeasyinterface.github.io">
   <fieldset>
     <p>
-      <label class="whitetext" for="s">Search this site</label>
       <input type="search" value="" name="s" id="s">
       <button type="submit" class="button button-minor">Search</button>
     </p>
@@ -103,14 +113,11 @@ li.dropdown {
 
 <!-- Drop down menu ending -->
 	
-<style>
-    h1, h2 {
-	    text-align: center;
-    }
-</style>
     
-<h1>CSCE 315 PROJECT 3</h1>
-<h2>Aggie Scheduler Fetcher</h2>    
+    <h1 class="site-heading text-center text-white d-none d-lg-block">
+      <span class="site-heading-upper text-primary mb-3">CSCE 315 Project 2</span>
+      <span class="site-heading-lower">Aggie easy interface</span>
+    </h1>    
               
 <!-- The style for centering images -->
 <style>
@@ -118,14 +125,16 @@ img {
     display: block;
     margin: 0 auto;
 }
+
+
 </style>
 <!-- End of style for centering images -->
         
-        
-        
+              
 
       
 <!-- Redirection to TAMU Schedule Page -->
+
   <script>
   // 1. Create the button
   var button = document.createElement("button");
@@ -158,8 +167,12 @@ img {
      
 });</script>
 <!-- End of redirection to TAMU login -->
-    
-
+<style>
+  .white-background {
+    background-color: white;
+  }
+</style>
+<div class="white-background">
 <link href='../fullcalendar.min.css' rel='stylesheet' />
 <link href='../fullcalendar.print.min.css' rel='stylesheet' media='print' />
 <script src='../lib/moment.min.js'></script>
@@ -270,7 +283,7 @@ img {
 	<div id='calendar'></div>
 
 </body>      
-
+  </div>
 <!-- Google Map Call -->
        <!-- <script src="https://maps.googleapis.com/maps/api/js?key= AIzaSyDL0m7ZMk90GvBE6W6KGrlm5kA63BHna_E &callback=myMap"></script> -->
     <!DOCTYPE html>
@@ -549,11 +562,7 @@ img {
 </html>
 <!-- End of Google Map Call -->
         
-        <!-- <h3>This button will prompt the studennt to fetch it's calendar and push it into his google calendar..</h3> -->
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis mattis ipsum, iaculis tempor mauris. Cras vel velit dapibus, eleifend ante nec, consectetur tellus. Donec enim diam, tempor eu tortor venenatis, mattis gravida ligula. Pellentesque eu arcu ultricies elit bibendum bibendum. Sed condimentum tortor non lacus luctus mattis. Etiam lobortis bibendum ante a finibus. Integer at lorem ultrices, ultrices ante at, posuere ex. Ut posuere non lacus ac semper. Curabitur cursus gravida convallis. Praesent ut rhoncus velit, quis consectetur nisl.
-        </p>
-
+        <!-- <h3>This button will prompt the student to fetch it's calendar and push it into his google calendar..</h3> -->
     
 <!-- Fetch Calendar button -->
   <script>            
@@ -611,6 +620,7 @@ div.tab button.active {
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
+    background-color: white;
 }
 
 /* Style the close button */
@@ -662,38 +672,14 @@ document.getElementById("defaultOpen").click();
 </script>
      
 <!-- End of transaparent menu -->
-
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        <h3> There should be small window with some images regarding app here.</h3>
-
-        
         <a href="https://engineering.tamu.edu/media/2414221/my_schedule_view_700x399.jpg">
             <img alt="A screenshot showing CSS Quick Edit" src="https://engineering.tamu.edu/media/2414221/my_schedule_view_700x399.jpg" />
         </a>
-        
-       
-
-        <h2>URL In Use</h2>
-        <p>
-            These are a list of URL's that may be used in the project. URL's or URL's of API's that we may use in the project. This list will not be shown.
-        </p>
         <ul>
-            <li><a href="http://drive.google.com">Google Drive</a></li>
-            <li><a href="https://calendar.google.com/calendar/render?pli=1#main_7">Google Calendar</a></li>
-            <li><a href="https://maps.google.com">Google Maps</a></li>
-            <li><a href="https://howdy.tamu.edu">Howdy</a></li>
+            <li><a href="http://drive.google.com" target="_blank">Google Drive</a></li>
+            <li><a href="https://calendar.google.com/calendar/render?pli=1#main_7" target="_blank">Google Calendar</a></li>
+            <li><a href="https://maps.google.com" target="_blank">Google Maps</a></li>
+            <li><a href="https://howdy.tamu.edu" target="_blank">Howdy</a></li>
 
         </ul>
                 <a href="https://brandguide.tamu.edu/images/logos/tam-stack.png">
