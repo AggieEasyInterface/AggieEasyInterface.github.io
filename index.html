@@ -134,7 +134,23 @@ img {
     <li>In order to see the a visual representation of your calendar, click on 'Authorize Calendar Display'. </li>
     
   </ol>
+<!-- Redirection to TAMU Login-->    
+  <script>            
+  var button1 = document.createElement("button");
+  button1.innerHTML = "Log In";    
+    
 
+  // 2. Append somewhere
+  var body1 = document.getElementsByTagName("body")[0];
+  body1.appendChild(button1);
+
+  // 3. Add event handler
+  button1.addEventListener ("click", function() {
+  window.open("https://howdy.tamu.edu/uPortal/p/TAMU-APP-Launcher.ctf3/detached/render.uP?pCm=view&pP_targetEndpoint=BWXKTSCHD.p_textScheduleStudent","_blank");
+     
+});
+</script>
+<!-- End of redirection to TAMU login -->
       
 <!-- Redirection to TAMU Schedule Page -->
 
@@ -153,8 +169,7 @@ img {
   });</script>
 <!-- End of redirection to TAMU Schedule Page -->
     
-    
-<!-- Redirection to TAMU Login-->    
+
     <!--Add buttons to initiate auth sequence and sign out-->
     <button id="authorize-button" style="display: none;">Authorize Calendar Display</button>
     <button id="signout-button" style="display: none;">Sign Out</button>
